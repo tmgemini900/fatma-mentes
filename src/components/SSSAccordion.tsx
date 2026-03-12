@@ -21,7 +21,7 @@
  *   <SSSAccordion sorular={SORULAR} />
  */
 
-import { useState, useRef, useEffect, KeyboardEvent } from "react";
+import React, { useState, useRef, useEffect, KeyboardEvent } from "react";
 
 /* ─── Tipler ─── */
 export interface SSSSorusu {
@@ -76,9 +76,9 @@ function AccordionItem({
   /* Kalın metin render */
   function cevapRender(metin: string, boldler: string[] = []) {
     if (!boldler.length) return metin;
-    const parca = boldler.reduce<(string | JSX.Element)[]>(
+    const parca = boldler.reduce<(string | React.JSX.Element)[]>(
       (acc, bold, i) => {
-        const yeni: (string | JSX.Element)[] = [];
+        const yeni: (string | React.JSX.Element)[] = [];
         acc.forEach(parcaItem => {
           if (typeof parcaItem !== "string") { yeni.push(parcaItem); return; }
           const bolunmus = parcaItem.split(bold);

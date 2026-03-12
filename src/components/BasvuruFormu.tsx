@@ -20,14 +20,12 @@ const BasvuruSemasi = z.object({
   soyisim: z.string().min(2, "En az 2 karakter girin"),
   eposta:  z.string().email("Geçerli bir e-posta girin"),
   telefon: z.string().optional(),
-  dil:     z.enum(["tr", "en", "it", "ru"], {
-    required_error: "Lütfen dil seçin",
-    invalid_type_error: "Geçersiz seçim",
+  dil:     z.enum(["tr", "en", "it", "ru"] as const, {
+    error: "Lütfen dil seçin",
   }),
   atolye: z.string().min(1, "Lütfen bir atölye seçin"),
-  deneyim: z.enum(["baslangic", "bazi", "orta", "ileri"], {
-    required_error: "Deneyim seviyenizi seçin",
-    invalid_type_error: "Geçersiz seçim",
+  deneyim: z.enum(["baslangic", "bazi", "orta", "ileri"] as const, {
+    error: "Deneyim seviyenizi seçin",
   }),
   mesaj: z.string().max(1000).optional(),
 });
