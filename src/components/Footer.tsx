@@ -188,26 +188,6 @@ export function Footer() {
                 Her dikiş, bir vasiyet. Her deri, bir emanet.
               </p>
 
-              {/* Sertifika damgası */}
-              <div
-                className="flex items-center gap-3 p-3 rounded-sm"
-                style={{ border: "1px solid rgba(201,168,76,0.15)", background: "rgba(201,168,76,0.04)", maxWidth: "260px" }}
-                role="img"
-                aria-label="Islak İmzalı Gerçeklik Sertifikası — her eser belgeli"
-              >
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
-                     style={{ border: "1px solid rgba(201,168,76,0.3)", background: "rgba(201,168,76,0.06)" }} aria-hidden="true">
-                  <MuhurIkonu />
-                </div>
-                <div>
-                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.04em", color: "rgba(245,236,215,0.75)", lineHeight: 1.2 }}>
-                    Islak İmzalı Sertifika
-                  </p>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.55rem", fontWeight: 300, letterSpacing: "0.1em", color: "rgba(201,168,76,0.45)", marginTop: "2px" }}>
-                    Her eser · Gerçeklik belgeli
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* ─── Kolon 2: Navigasyon ─── */}

@@ -606,69 +606,6 @@ export default async function EserDetayPage({
             )}
           </div>
 
-          {/* ─── SERTİFİKA KUTUSU ─── */}
-          <div
-            className="relative overflow-hidden rounded-sm p-6"
-            style={{
-              border: "1px solid rgba(201,168,76,0.25)",
-              background: "linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 50%)",
-            }}
-            aria-label="Gerçeklik Sertifikası Bilgisi"
-          >
-            {/* Watermark */}
-            <svg
-              className="absolute top-1/2 right-[-1rem] -translate-y-1/2 pointer-events-none"
-              style={{ opacity: 0.04 }}
-              width="120" height="120" viewBox="0 0 120 120" fill="none"
-              aria-hidden="true"
-            >
-              <circle cx="60" cy="60" r="55" stroke="#C9A84C" strokeWidth="1"/>
-              <circle cx="60" cy="60" r="45" stroke="#C9A84C" strokeWidth="0.5"/>
-              <path d="M60 20 L65 38 L84 38 L70 49 L75 67 L60 56 L45 67 L50 49 L36 38 L55 38 Z"
-                    stroke="#C9A84C" strokeWidth="0.5" fill="none"/>
-            </svg>
-
-            <div className="relative z-10 flex gap-4 items-start">
-              {/* Mühür */}
-              <div
-                className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ border: "1px solid rgba(201,168,76,0.4)", background: "rgba(201,168,76,0.06)" }}
-                aria-hidden="true"
-              >
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="12" stroke="#C9A84C" strokeWidth="1" strokeOpacity="0.8"/>
-                  <circle cx="14" cy="14" r="7"  stroke="#C9A84C" strokeWidth="0.6" strokeOpacity="0.5"/>
-                  <path d="M9.5 14 L12.5 17 L18.5 11" stroke="#C9A84C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-
-              {/* Metin */}
-              <div>
-                <p
-                  className="font-semibold mb-1"
-                  style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1rem", letterSpacing: "0.04em", color: "#1A0F0A" }}
-                >
-                  Islak İmzalı Gerçeklik Sertifikası
-                </p>
-                <p
-                  className="text-[0.75rem] font-light leading-relaxed"
-                  style={{ fontFamily: "'DM Sans', sans-serif", color: "rgba(92,58,30,0.6)" }}
-                >
-                  Bu eserle birlikte, Fatma Menteş'in ıslak imzasını taşıyan{" "}
-                  <strong className="font-medium" style={{ color: "#5C3A1E" }}>
-                    dijital ve fiziksel Sıfır Atık · El İşçiliği Gerçeklik Sertifikası
-                  </strong>{" "}
-                  gönderilir. Sertifika; deri türünü, sanat tekniklerini ve emek saatini belgeler.
-                </p>
-                <p
-                  className="mt-3 text-[0.8rem] italic"
-                  style={{ fontFamily: "'Cormorant Garamond', serif", color: "rgba(201,168,76,0.75)", letterSpacing: "0.05em" }}
-                >
-                  — Fatma Menteş, Çıplak Eller Atölyesi
-                </p>
-              </div>
-            </div>
-          </div>
 
         </div>{/* /icerik-blok */}
       </div>{/* /detay-layout */}
