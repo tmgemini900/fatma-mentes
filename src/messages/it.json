@@ -1,0 +1,141 @@
+{
+  "site": {
+    "isim": "Fatma Menteş",
+    "slogan": "Memoria del Cuoio",
+    "aciklama": "Opere in pelle artigianali a zero sprechi, cucite a mano dalla memoria, in sfida alle macchine.",
+    "telif": "© 2026 Fatma Menteş · Tutti i diritti riservati",
+    "manifesto": "Zero sprechi. Zero macchine. Infinita pazienza."
+  },
+  "nav": {
+    "eserler": "Opere",
+    "eller": "Mani Nude",
+    "atolye": "Laboratorio",
+    "basvuru": "Candidarsi",
+    "iletisim": "Contatto"
+  },
+  "hero": {
+    "etiket": "Artigianato · Istanbul",
+    "baslik1": "Memoria",
+    "baslik2": "del Cuoio",
+    "alinti": "Opere in pelle artigianali a zero sprechi, cucite a mano dalla memoria, in sfida alle macchine."
+  },
+  "eserler": {
+    "baslik": "Opere",
+    "filtre": "Filtra",
+    "musait": "Disponibile",
+    "dolu": "Affidata",
+    "hepsi": "Tutte"
+  },
+  "eserDetay": {
+    "kimlikKarti": "Carta d'Identità",
+    "hikaye": "Storia",
+    "emanetAl": "Affida Quest'Opera",
+    "emanetBuldu": "Ha Trovato il suo Custode",
+    "sertifika": "Certificato di Autenticità con Firma Originale",
+    "benzerEserler": "Opere Simili",
+    "derTuru": "Tipo di Pelle",
+    "teknikler": "Tecniche",
+    "olculer": "Dimensioni",
+    "yapimYeri": "Realizzato a",
+    "emekSaati": "Ore di Lavoro",
+    "elektriksiz": "Produzione Senza Elettricità",
+    "iletisim": "Contatta Fatma Usta"
+  },
+  "eller": {
+    "baslik1": "Mani",
+    "baslik2": "Nude",
+    "alinti": "Una macchina non conosce i calli. Le mani — crescono ad ogni punto.",
+    "bolum01": "01 · Gli Inizi",
+    "bolum02": "02 · Dal Niente alla Maestria",
+    "bolum03": "03 · Filosofia Zero Sprechi",
+    "cta": "Esplora le Opere",
+    "ctaAtoyle": "Corsi di Laboratorio"
+  },
+  "atolye": {
+    "baslik1": "Le Mani Lavorano,",
+    "baslik2": "L'Anima Guarisce",
+    "takvimBaslik": "Prossimi Laboratori",
+    "basvuruBaslik": "Vi aspettiamo con le vostre mani",
+    "gonderBtn": "Invia Candidatura",
+    "basariBaslik": "Candidatura ricevuta ✦",
+    "basariAlt": "Fatma vi contatterà entro 48 ore.",
+    "kontenjanDolu": "Posti Esauriti",
+    "kotaBos": "posti disponibili",
+    "malzemeDahil": "Materiali inclusi",
+    "sss": "Domande Frequenti"
+  },
+  "form": {
+    "isim": "Nome",
+    "soyisim": "Cognome",
+    "eposta": "Email",
+    "telefon": "Telefono",
+    "dil": "Lingua Preferita",
+    "atolye": "Laboratorio di Interesse",
+    "deneyim": "Esperienza con il Cuoio",
+    "mesaj": "Dicci Qualcosa",
+    "opsiyonel": "(facoltativo)",
+    "secin": "Seleziona…",
+    "deneyimSecenek": {
+      "baslangic": "Nessuna esperienza — prima volta",
+      "bazi": "Ho provato alcune volte, ho le basi",
+      "orta": "Lavoro regolarmente, livello intermedio",
+      "ileri": "Avanzato, buone conoscenze tecniche"
+    },
+    "hatalar": {
+      "isim": "Inserisci il tuo nome",
+      "soyisim": "Inserisci il tuo cognome",
+      "eposta": "Inserisci un'email valida",
+      "dil": "Seleziona una lingua",
+      "atolye": "Seleziona un laboratorio",
+      "deneyim": "Seleziona il tuo livello di esperienza"
+    },
+    "guvenler": [
+      "Nessuna carta di credito richiesta",
+      "Risposta garantita entro 48 ore",
+      "Cancellazione gratuita fino a 7 giorni prima"
+    ]
+  },
+  "footer": {
+    "sayfalar": "Pagine",
+    "yaklasanAtolyeler": "Prossimi Laboratori",
+    "dilSecici": "Lingua",
+    "iletisim": "Contatto",
+    "tumTakvim": "Calendario completo",
+    "sertifika": "Certificato con Firma Originale",
+    "sertifikaAlt": "Ogni opera · Autenticità verificata",
+    "adres": "Beyoğlu, Istanbul",
+    "kapanis": "Ogni punto è una finestra aperta sfidando il tempo. Ogni pelle, un testimone silenzioso di una vita."
+  },
+  "sss": [
+    {
+      "id": "s1",
+      "soru": "Non ho esperienza con il cuoio — posso partecipare?",
+      "cevap": "Assolutamente. I nostri laboratori per principianti sono progettati senza presupporre alcuna esperienza. Fatma dimostrerà ogni passaggio e vi guiderà.",
+      "cevapBold": ["laboratori per principianti"]
+    },
+    {
+      "id": "s2",
+      "soru": "Non parlo turco — posso partecipare?",
+      "cevap": "Certamente. I laboratori si svolgono in TR, EN, IT e RU. I gesti delle mani sono universali — Fatma mostra e fa sentire. Indicate la vostra lingua nella candidatura.",
+      "cevapBold": ["TR, EN, IT e RU"]
+    },
+    {
+      "id": "s3",
+      "soru": "Quando si paga?",
+      "cevap": "Il modulo di candidatura è gratuito. Dopo l'approvazione si richiede un acconto del 50%; il resto si paga il giorno del laboratorio. Rimborso completo fino a 7 giorni prima.",
+      "cevapBold": ["acconto del 50%"]
+    },
+    {
+      "id": "s4",
+      "soru": "Posso prenotare una lezione privata?",
+      "cevap": "Sì. Le lezioni private sono disponibili; prezzo e data si concordano direttamente con Fatma. È sufficiente scrivere 'lezione privata' nella casella messaggi.",
+      "cevapBold": ["lezioni private sono disponibili"]
+    },
+    {
+      "id": "s5",
+      "soru": "Cosa porto a casa?",
+      "cevap": "Dipende dal laboratorio: un portafoglio fatto a mano dal corso di cucito, un pannello in pelle dal laboratorio di tezhip. Ogni opera viene consegnata con il certificato di artigianalità firmato a mano da Fatma.",
+      "cevapBold": ["portafoglio fatto a mano"]
+    }
+  ]
+}

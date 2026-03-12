@@ -1,0 +1,141 @@
+{
+  "site": {
+    "isim": "Fatma Menteş",
+    "slogan": "Derinin Hafızası",
+    "aciklama": "Makinelere inat, ellerin hafızasıyla işlenen sıfır atık eserler.",
+    "telif": "© 2026 Fatma Menteş · Tüm hakları saklıdır",
+    "manifesto": "Sıfır atık. Sıfır makine. Sonsuz sabır."
+  },
+  "nav": {
+    "eserler": "Eserler",
+    "eller": "Çıplak Eller",
+    "atolye": "Atölye",
+    "basvuru": "Başvuru",
+    "iletisim": "İletişim"
+  },
+  "hero": {
+    "etiket": "El işçiliği · İstanbul",
+    "baslik1": "Derinin",
+    "baslik2": "Hafızası",
+    "alinti": "Makinelere inat, ellerin hafızasıyla işlenen sıfır atık eserler."
+  },
+  "eserler": {
+    "baslik": "Eserler",
+    "filtre": "Filtrele",
+    "musait": "Müsait",
+    "dolu": "Emanet Buldu",
+    "hepsi": "Tümü"
+  },
+  "eserDetay": {
+    "kimlikKarti": "Kimlik Kartı",
+    "hikaye": "Hikâye",
+    "emanetAl": "Bu Eseri Emanet Al",
+    "emanetBuldu": "Emanet Buldu",
+    "sertifika": "Islak İmzalı Gerçeklik Sertifikası",
+    "benzerEserler": "Benzer Eserler",
+    "derTuru": "Deri Türü",
+    "teknikler": "Teknikler",
+    "olculer": "Ölçüler",
+    "yapimYeri": "Yapım Yeri",
+    "emekSaati": "Emek Saati",
+    "elektriksiz": "Elektriksiz Üretim",
+    "iletisim": "Fatma Usta ile iletişim kurulur"
+  },
+  "eller": {
+    "baslik1": "Çıplak",
+    "baslik2": "Eller",
+    "alinti": "Makine bilmez nasır tutmayı. El ise — her dikişte büyür.",
+    "bolum01": "01 · Başlangıç",
+    "bolum02": "02 · Yokluktan Ustalığa",
+    "bolum03": "03 · Sıfır Atık Felsefesi",
+    "cta": "Eserleri Keşfet",
+    "ctaAtoyle": "Atölye Dersleri"
+  },
+  "atolye": {
+    "baslik1": "Eller Çalışır,",
+    "baslik2": "Ruh Şifa Bulur",
+    "takvimBaslik": "Yaklaşan Atölyeler",
+    "basvuruBaslik": "Ellerinizi atölyeye bekliyoruz",
+    "gonderBtn": "Başvurumu Gönder",
+    "basariBaslik": "Başvurunuz alındı ✦",
+    "basariAlt": "Fatma Hanım 48 saat içinde sizinle iletişime geçecek.",
+    "kontenjanDolu": "Kontenjan Doldu",
+    "kotaBos": "kota boş",
+    "malzemeDahil": "Malzeme dahil",
+    "sss": "Sıkça Sorulan Sorular"
+  },
+  "form": {
+    "isim": "Ad",
+    "soyisim": "Soyad",
+    "eposta": "E-posta",
+    "telefon": "Telefon",
+    "dil": "Tercih Dili",
+    "atolye": "İlgilendiğiniz Atölye",
+    "deneyim": "Deri Deneyiminiz",
+    "mesaj": "Bize Bir Şey Söyleyin",
+    "opsiyonel": "(opsiyonel)",
+    "secin": "Seçin…",
+    "deneyimSecenek": {
+      "baslangic": "Hiç bilmiyorum — ilk kez denerim",
+      "bazi": "Birkaç kez denedim, temel bilgim var",
+      "orta": "Düzenli çalışıyorum, orta seviyedeyim",
+      "ileri": "İleri seviye, teknik bilgim güçlü"
+    },
+    "hatalar": {
+      "isim": "Lütfen adınızı girin",
+      "soyisim": "Lütfen soyadınızı girin",
+      "eposta": "Geçerli bir e-posta girin",
+      "dil": "Lütfen dil seçin",
+      "atolye": "Lütfen bir atölye seçin",
+      "deneyim": "Deneyim seviyenizi seçin"
+    },
+    "guvenler": [
+      "Kredi kartı bilgisi istemeyiz",
+      "48 saatte yanıt garantisi",
+      "Ücretsiz iptal — 7 gün öncesine kadar"
+    ]
+  },
+  "footer": {
+    "sayfalar": "Sayfalar",
+    "yaklasanAtolyeler": "Yaklaşan Atölyeler",
+    "dilSecici": "Dil / Language",
+    "iletisim": "İletişim",
+    "tumTakvim": "Tüm takvim",
+    "sertifika": "Islak İmzalı Sertifika",
+    "sertifikaAlt": "Her eser · Gerçeklik belgeli",
+    "adres": "Beyoğlu, İstanbul",
+    "kapanis": "Her dikiş, zamana inat açılan bir penceredir. Her deri, bir ömrün sessiz tanığı."
+  },
+  "sss": [
+    {
+      "id": "s1",
+      "soru": "Hiç deri işlemedim, gelebilir miyim?",
+      "cevap": "Evet, kesinlikle. Başlangıç seviyesi atölyelerimiz sıfır deneyim varsayımıyla tasarlandı. Fatma Hanım her adımı gösterir, yönlendirir.",
+      "cevapBold": ["Başlangıç seviyesi atölyelerimiz"]
+    },
+    {
+      "id": "s2",
+      "soru": "Türkçe bilmiyorum, katılabilir miyim?",
+      "cevap": "Kesinlikle. Atölyelerimiz TR, EN, IT ve RU dillerinde yürütülür. El hareketleri evrenseldir — Fatma Hanım gösterip hissettirir.",
+      "cevapBold": ["TR, EN, IT ve RU dillerinde"]
+    },
+    {
+      "id": "s3",
+      "soru": "Ücret ne zaman ödenir?",
+      "cevap": "Başvuru formu ücretsizdir. Onaydan sonra %50 depozit istenir, kalan tutar atölye gününde ödenir. 7 gün öncesine kadar tam iade.",
+      "cevapBold": ["%50 depozit"]
+    },
+    {
+      "id": "s4",
+      "soru": "Özel ders alabilir miyim?",
+      "cevap": "Evet. Özel ders seçeneği mevcuttur; fiyat ve tarih doğrudan Fatma Hanım ile kararlaştırılır. Mesaj kutusuna 'özel ders istiyorum' yazmanız yeterli.",
+      "cevapBold": ["Özel ders seçeneği"]
+    },
+    {
+      "id": "s5",
+      "soru": "Atölyeden ne götürebilirim?",
+      "cevap": "Atölyeye göre değişir. Cüzdan atölyesinde el yapımı bir cüzdan, levha atölyesinde bir deri tablo. Her eserle birlikte Fatma Hanım'ın ıslak imzalı el işçiliği belgesi verilir.",
+      "cevapBold": ["el yapımı bir cüzdan"]
+    }
+  ]
+}

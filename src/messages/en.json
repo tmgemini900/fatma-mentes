@@ -1,0 +1,141 @@
+{
+  "site": {
+    "isim": "Fatma Menteş",
+    "slogan": "Memory of Leather",
+    "aciklama": "Zero-waste leather goods hand-stitched from memory, in defiance of machines.",
+    "telif": "© 2026 Fatma Menteş · All rights reserved",
+    "manifesto": "Zero waste. Zero machines. Infinite patience."
+  },
+  "nav": {
+    "eserler": "Works",
+    "eller": "Bare Hands",
+    "atolye": "Workshop",
+    "basvuru": "Apply",
+    "iletisim": "Contact"
+  },
+  "hero": {
+    "etiket": "Leathercraft · Istanbul",
+    "baslik1": "Memory",
+    "baslik2": "of Leather",
+    "alinti": "Zero-waste leather goods hand-stitched from memory, in defiance of machines."
+  },
+  "eserler": {
+    "baslik": "Works",
+    "filtre": "Filter",
+    "musait": "Available",
+    "dolu": "Entrusted",
+    "hepsi": "All"
+  },
+  "eserDetay": {
+    "kimlikKarti": "Identity Card",
+    "hikaye": "Story",
+    "emanetAl": "Entrust This Piece",
+    "emanetBuldu": "Found Its Guardian",
+    "sertifika": "Wet-Signed Authenticity Certificate",
+    "benzerEserler": "Similar Works",
+    "derTuru": "Leather Type",
+    "teknikler": "Techniques",
+    "olculer": "Dimensions",
+    "yapimYeri": "Made in",
+    "emekSaati": "Labour Hours",
+    "elektriksiz": "Electricity-Free Production",
+    "iletisim": "Contact with Fatma Usta"
+  },
+  "eller": {
+    "baslik1": "Bare",
+    "baslik2": "Hands",
+    "alinti": "A machine cannot callous. A hand — grows with every stitch.",
+    "bolum01": "01 · Beginnings",
+    "bolum02": "02 · From Nothing to Mastery",
+    "bolum03": "03 · Zero Waste Philosophy",
+    "cta": "Explore Works",
+    "ctaAtoyle": "Workshop Classes"
+  },
+  "atolye": {
+    "baslik1": "Hands Work,",
+    "baslik2": "Soul Heals",
+    "takvimBaslik": "Upcoming Workshops",
+    "basvuruBaslik": "We welcome your hands to the workshop",
+    "gonderBtn": "Submit Application",
+    "basariBaslik": "Application received ✦",
+    "basariAlt": "Fatma will be in touch within 48 hours.",
+    "kontenjanDolu": "Fully Booked",
+    "kotaBos": "spots left",
+    "malzemeDahil": "Materials included",
+    "sss": "Frequently Asked Questions"
+  },
+  "form": {
+    "isim": "First Name",
+    "soyisim": "Last Name",
+    "eposta": "Email",
+    "telefon": "Phone",
+    "dil": "Preferred Language",
+    "atolye": "Workshop of Interest",
+    "deneyim": "Leather Experience",
+    "mesaj": "Tell Us Something",
+    "opsiyonel": "(optional)",
+    "secin": "Select…",
+    "deneyimSecenek": {
+      "baslangic": "No experience — first time",
+      "bazi": "Tried a few times, have some basics",
+      "orta": "Work regularly, intermediate level",
+      "ileri": "Advanced, strong technical knowledge"
+    },
+    "hatalar": {
+      "isim": "Please enter your first name",
+      "soyisim": "Please enter your last name",
+      "eposta": "Please enter a valid email",
+      "dil": "Please select a language",
+      "atolye": "Please select a workshop",
+      "deneyim": "Please select your experience level"
+    },
+    "guvenler": [
+      "No credit card required",
+      "Response guaranteed within 48 hours",
+      "Free cancellation up to 7 days before"
+    ]
+  },
+  "footer": {
+    "sayfalar": "Pages",
+    "yaklasanAtolyeler": "Upcoming Workshops",
+    "dilSecici": "Language",
+    "iletisim": "Contact",
+    "tumTakvim": "Full calendar",
+    "sertifika": "Wet-Signed Certificate",
+    "sertifikaAlt": "Every piece · Authenticity verified",
+    "adres": "Beyoğlu, Istanbul",
+    "kapanis": "Every stitch is a window opened in defiance of time. Every leather, a silent witness to a lifetime."
+  },
+  "sss": [
+    {
+      "id": "s1",
+      "soru": "I have no leather experience — can I join?",
+      "cevap": "Absolutely. Our beginner workshops are designed with zero prior experience in mind. Fatma will demonstrate every step and guide you.",
+      "cevapBold": ["beginner workshops"]
+    },
+    {
+      "id": "s2",
+      "soru": "I don't speak Turkish — can I attend?",
+      "cevap": "Of course. Workshops are conducted in TR, EN, IT and RU. Hand gestures are universal — Fatma shows and lets you feel. Indicate your language when applying.",
+      "cevapBold": ["TR, EN, IT and RU"]
+    },
+    {
+      "id": "s3",
+      "soru": "When is payment due?",
+      "cevap": "The application form is free. After approval, a 50% deposit is requested; the remainder is paid on the workshop day. Full refund up to 7 days before.",
+      "cevapBold": ["50% deposit"]
+    },
+    {
+      "id": "s4",
+      "soru": "Can I book a private lesson?",
+      "cevap": "Yes. Private lessons are available; price and date are arranged directly with Fatma. Simply write 'private lesson' in the message box.",
+      "cevapBold": ["Private lessons are available"]
+    },
+    {
+      "id": "s5",
+      "soru": "What do I take home?",
+      "cevap": "It depends on the workshop: a handmade wallet from the stitching class, a leather panel from the tezhip workshop. Every piece comes with Fatma's wet-signed craftsmanship certificate.",
+      "cevapBold": ["handmade wallet"]
+    }
+  ]
+}

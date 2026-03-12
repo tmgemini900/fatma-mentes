@@ -1,0 +1,172 @@
+[
+  {
+    "id": "001",
+    "slug": "misir-puskulu-huzunlu-canta",
+    "isim": "Mısır Püskülü Hüzünlü Çanta",
+    "hikaye": "Tarladan değil, atölyeden doğdu. Vaketa henüz hayattayken ona bir son kez dokunuldu; bu kez iğneyle. Her dikişi, o tarlalarda savrulan mısır püskülleri kadar özgür, o kadar kırılgan.",
+    "kategori": "gunluk-yoldas",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış sığır vaketası",
+      "sanat": ["Çift iğne el dikişi (Saddle Stitch)", "Gofre kabartma", "Naturel boya"],
+      "emek":  "Bu eser için makine kullanılmamış, 48 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     4800,
+    "musait":    true,
+    "boyut":     "28 × 22 × 8 cm",
+    "fotograflar": ["misir-puskulu-1.jpg", "misir-puskulu-2.jpg"],
+    "vitrin":    true
+  },
+  {
+    "id": "002",
+    "slug": "kibrit-tutan-eller-cuzdan",
+    "isim": "Kibrit Tutan Eller Cüzdanı",
+    "hikaye": "Soğuk bir kış sabahı buldunuz onu — ceplerinizin en derininde. Vaketa üzerinde kazınan eller, yıllarca yanınızda olacak bu küçük sığınağı tutmayı öğretti size.",
+    "kategori": "gunluk-yoldas",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış sığır vaketası",
+      "sanat": ["Deri kazıma (Carving)", "Çift iğne el dikişi", "Balmumu perdah"],
+      "emek":  "Bu eser için makine kullanılmamış, 22 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     1650,
+    "musait":    true,
+    "boyut":     "20 × 10 cm (açık)",
+    "fotograflar": ["kibrit-eller-1.jpg", "kibrit-eller-2.jpg"],
+    "vitrin":    false
+  },
+  {
+    "id": "003",
+    "slug": "boz-toprak-kemer",
+    "isim": "Boz Toprak Kemeri",
+    "hikaye": "Anadolu'nun sırtı kadar sabırlı, ovası kadar geniş bir şerit. Rengi kasıtlı; ne tamamen kahve, ne tamamen gri — tam o aradaki boz, her şeyin başladığı ve bittiği renk.",
+    "kategori": "gunluk-yoldas",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış sığır vaketası",
+      "sanat": ["El boyama (Antik efekt)", "Perçin işleme", "El yapımı toka"],
+      "emek":  "Bu eser için makine kullanılmamış, 14 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     950,
+    "musait":    true,
+    "boyut":     "110 × 3.5 cm",
+    "fotograflar": ["boz-toprak-kemer-1.jpg"],
+    "vitrin":    false
+  },
+  {
+    "id": "004",
+    "slug": "yalniz-agac-royefi",
+    "isim": "Yalnız Ağaç Rölyefi",
+    "hikaye": "Duvarlar insanı duyar. Bu rölyef, sözlerin yetersiz kaldığı anlarda konuşsun diye yapıldı. Kökler derine kazındı, dal uçları hafifçe bırakıldı — her şey bitti ve her şey devam etti.",
+    "kategori": "duvarin-ruhu",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış sığır vaketası",
+      "sanat": ["3D Rölyef kazıma", "Gofre kabartma", "Antika patina boya"],
+      "emek":  "Bu eser için makine kullanılmamış, 72 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     7200,
+    "musait":    true,
+    "boyut":     "50 × 70 cm",
+    "fotograflar": ["yalniz-agac-1.jpg", "yalniz-agac-2.jpg"],
+    "vitrin":    true
+  },
+  {
+    "id": "005",
+    "slug": "gece-dili-deri-tablo",
+    "isim": "Gece Dili Deri Tablo",
+    "hikaye": "Bazı şeyler ancak karanlıkta söylenir. Bu tablo, konuşmayı bırakıp sadece hissetmeye davet ediyor sizi. Çini mavisi boyalar, el kazıması figürlerle iç içe geçmiş — kelimesiz bir şiir.",
+    "kategori": "duvarin-ruhu",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış sığır vaketası",
+      "sanat": ["Deri kazıma", "Çini mavisi el boyama", "Altın yaldız varak detay"],
+      "emek":  "Bu eser için makine kullanılmamış, 60 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     6400,
+    "musait":    false,
+    "boyut":     "40 × 60 cm",
+    "fotograflar": ["gece-dili-1.jpg", "gece-dili-2.jpg"],
+    "vitrin":    true
+  },
+  {
+    "id": "006",
+    "slug": "seyir-defteri-tezhipli-deri",
+    "isim": "Seyir Defteri Tezhipli Deri",
+    "hikaye": "Tezhip sanatı altın çizer, deri ses tutar. Bu eserde ikisi birleşti: Selçuklu rûmi motifleri, ince vaketa yüzeyinde yüzyıllarca sürecek bir seyahat başlattı.",
+    "kategori": "maneviyat",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış keçi derisi",
+      "sanat": ["Osmanlı tezhip (Rûmi motif)", "Altın yaldız kakma", "Çift iğne el dikişi"],
+      "emek":  "Bu eser için makine kullanılmamış, 96 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     11500,
+    "musait":    true,
+    "boyut":     "35 × 25 cm",
+    "fotograflar": ["seyir-defteri-1.jpg", "seyir-defteri-2.jpg"],
+    "vitrin":    true
+  },
+  {
+    "id": "007",
+    "slug": "cini-bahce-deri-levha",
+    "isim": "Çini Bahçe Deri Levhası",
+    "hikaye": "İznik çinisinin mavi-beyaz nefesini deriye taşımak için aylar geçti. Her lale motifi önce kâğıda, sonra deriye çizildi. Bir bahçe ki, sulanmadan yaşar.",
+    "kategori": "maneviyat",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış sığır vaketası",
+      "sanat": ["İznik çini motif kazıma", "El boyama (mavi-beyaz-kırmızı)", "Altın kontur"],
+      "emek":  "Bu eser için makine kullanılmamış, 84 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     9800,
+    "musait":    true,
+    "boyut":     "45 × 45 cm",
+    "fotograflar": ["cini-bahce-1.jpg", "cini-bahce-2.jpg"],
+    "vitrin":    false
+  },
+  {
+    "id": "008",
+    "slug": "matador-sehpasi",
+    "isim": "Matadorun Sehpası",
+    "hikaye": "Bir boğa arenada yaşadı ve öldü. Derisindeki ok izleri, o anın tanıklarıdır. Fatma Usta bu izleri silmedi — aksine konuşturdu. Sehpanın ayakları, varolmanın ve dönüşümün hikâyesini taşıyor.",
+    "kategori": "atiklarin-donusumu",
+    "kimlik": {
+      "deri":  "Matador boğa derisi (sıfır atık)",
+      "sanat": ["Ham deri şekillendirme", "Ok izi koruma (orijinal)", "Doğal balmumu kaplama"],
+      "emek":  "Bu eser için makine kullanılmamış, 120 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     18500,
+    "musait":    true,
+    "boyut":     "60 × 40 × 45 cm",
+    "fotograflar": ["matador-sehpa-1.jpg", "matador-sehpa-2.jpg", "matador-sehpa-3.jpg"],
+    "vitrin":    true
+  },
+  {
+    "id": "009",
+    "slug": "eski-kemer-yeni-omuz",
+    "isim": "Eski Kemer, Yeni Omuz",
+    "hikaye": "Sahiplerinin unuttuğu antika kemer parçaları, yeni bir omuz çantasına dönüştü. Hiçbir şey başlamadığı yerde bitmez. Her toka, bir önceki yolcuyu hatırlıyor.",
+    "kategori": "atiklarin-donusumu",
+    "kimlik": {
+      "deri":  "Antika kemer derisi (dönüştürülmüş)",
+      "sanat": ["Patchwork birleştirme", "Orijinal toka kullanımı", "El dikişi"],
+      "emek":  "Bu eser için makine kullanılmamış, 36 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     3200,
+    "musait":    true,
+    "boyut":     "30 × 24 × 6 cm",
+    "fotograflar": ["eski-kemer-1.jpg", "eski-kemer-2.jpg"],
+    "vitrin":    false
+  },
+  {
+    "id": "010",
+    "slug": "sabir-tasina-cizilen-dua",
+    "isim": "Sabır Taşına Çizilen Dua",
+    "hikaye": "Derviş seyyahların yol heybesinden ilham alındı. Üzerinde Osmanlı duası kazılı; harfler yüzeye o kadar sinmiş ki derinin kendisi de bir sure gibi okunuyor.",
+    "kategori": "maneviyat",
+    "kimlik": {
+      "deri":  "Bitkisel tabaklanmış sığır vaketası",
+      "sanat": ["Osmanlı hattı kazıma", "Altın yaldız varak", "Çift iğne el dikişi"],
+      "emek":  "Bu eser için makine kullanılmamış, 110 saat el işçiliği harcanmıştır."
+    },
+    "fiyat":     13200,
+    "musait":    false,
+    "boyut":     "38 × 28 cm",
+    "fotograflar": ["sabir-tasi-1.jpg", "sabir-tasi-2.jpg"],
+    "vitrin":    false
+  }
+]
