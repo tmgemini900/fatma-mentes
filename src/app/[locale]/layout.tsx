@@ -21,8 +21,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const LOCALE_LISTESI = ["tr", "en", "it", "ru"] as const;
-type Locale = (typeof LOCALE_LISTESI)[number];
+const LOCALE_LISTESI = ["tr", "en", "it", "ru"];
 
 export const metadata: Metadata = {
   title: "Fatma Menteş Art",
@@ -34,11 +33,11 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
 
-  if (!(LOCALE_LISTESI as readonly string[]).includes(locale)) {
+  if (!LOCALE_LISTESI.includes(locale)) {
     notFound();
   }
 
