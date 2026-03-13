@@ -1,12 +1,8 @@
 "use client";
 
-/**
- * app/[locale]/iletisim/page.tsx
- * Fatma Menteş — İletişim Sayfası
- */
-
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 function OrnamentCizgi() {
   return (
@@ -19,44 +15,8 @@ function OrnamentCizgi() {
   );
 }
 
-const ILETISIM_BILGILERI = [
-  {
-    ikon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <rect x="2" y="4" width="16" height="12" rx="1.5" stroke="#C9A84C" strokeWidth="1" />
-        <path d="M2 5.5 L10 11 L18 5.5" stroke="#C9A84C" strokeWidth="1" strokeLinecap="round" />
-      </svg>
-    ),
-    baslik: "E-posta",
-    deger: "info@fatmamentesart.com",
-    href: "mailto:info@fatmamentesart.com",
-  },
-  {
-    ikon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M10 2 Q15 2 15 7.5 Q15 13 10 18 Q5 13 5 7.5 Q5 2 10 2 Z" stroke="#C9A84C" strokeWidth="1" fill="none" />
-        <circle cx="10" cy="7.5" r="2.5" stroke="#C9A84C" strokeWidth="0.9" fill="none" />
-      </svg>
-    ),
-    baslik: "Atölye",
-    deger: "Beyoğlu, İstanbul",
-    href: undefined,
-  },
-  {
-    ikon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="16" height="16" rx="4" stroke="#C9A84C" strokeWidth="1" fill="none" />
-        <circle cx="10" cy="10" r="3.5" stroke="#C9A84C" strokeWidth="0.9" fill="none" />
-        <circle cx="14.5" cy="5.5" r="1" fill="#C9A84C" fillOpacity="0.8" />
-      </svg>
-    ),
-    baslik: "Instagram",
-    deger: "@fatmamentesart",
-    href: "https://instagram.com/fatmamentesart",
-  },
-];
-
 export default function IletisimPage() {
+  const t = useTranslations("iletisimSayfa");
   const [form, setForm] = useState({ isim: "", eposta: "", mesaj: "" });
   const [gonderildi, setGonderildi] = useState(false);
 
@@ -64,6 +24,43 @@ export default function IletisimPage() {
     e.preventDefault();
     setGonderildi(true);
   }
+
+  const ILETISIM_BILGILERI = [
+    {
+      ikon: (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <rect x="2" y="4" width="16" height="12" rx="1.5" stroke="#C9A84C" strokeWidth="1" />
+          <path d="M2 5.5 L10 11 L18 5.5" stroke="#C9A84C" strokeWidth="1" strokeLinecap="round" />
+        </svg>
+      ),
+      baslik: t("epostaLabel"),
+      deger: "info@fatmamentesart.com",
+      href: "mailto:info@fatmamentesart.com",
+    },
+    {
+      ikon: (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 2 Q15 2 15 7.5 Q15 13 10 18 Q5 13 5 7.5 Q5 2 10 2 Z" stroke="#C9A84C" strokeWidth="1" fill="none" />
+          <circle cx="10" cy="7.5" r="2.5" stroke="#C9A84C" strokeWidth="0.9" fill="none" />
+        </svg>
+      ),
+      baslik: t("atolyeLabel"),
+      deger: "Beyoğlu, İstanbul",
+      href: undefined,
+    },
+    {
+      ikon: (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="16" height="16" rx="4" stroke="#C9A84C" strokeWidth="1" fill="none" />
+          <circle cx="10" cy="10" r="3.5" stroke="#C9A84C" strokeWidth="0.9" fill="none" />
+          <circle cx="14.5" cy="5.5" r="1" fill="#C9A84C" fillOpacity="0.8" />
+        </svg>
+      ),
+      baslik: "Instagram",
+      deger: "@fatmamentesart",
+      href: "https://instagram.com/fatmamentesart",
+    },
+  ];
 
   return (
     <main
@@ -74,7 +71,7 @@ export default function IletisimPage() {
         paddingBottom: "5rem",
       }}
     >
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem)" }}>
 
         {/* ── Başlık ── */}
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
@@ -86,7 +83,7 @@ export default function IletisimPage() {
             color: "#C9A84C",
             marginBottom: "1rem",
           }}>
-            04 · İletişim
+            {t("etiket")}
           </p>
           <h1 style={{
             fontFamily: "'Cormorant Garamond', serif",
@@ -97,7 +94,7 @@ export default function IletisimPage() {
             lineHeight: 1.1,
             marginBottom: "1.5rem",
           }}>
-            Bize Ulaşın
+            {t("baslik")}
           </h1>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <OrnamentCizgi />
@@ -113,7 +110,7 @@ export default function IletisimPage() {
             margin: "1.5rem auto 0",
             lineHeight: 1.7,
           }}>
-            Bir eser hakkında soru sormak, atölye rezervasyonu veya sadece el sanatı üzerine sohbet için yazın.
+            {t("aciklama")}
           </p>
         </div>
 
@@ -121,7 +118,7 @@ export default function IletisimPage() {
         <div style={{
           display: "grid",
           gridTemplateColumns: "1fr 1.6fr",
-          gap: "4rem",
+          gap: "clamp(2rem, 4vw, 4rem)",
           alignItems: "start",
         }}
           className="iletisim-grid"
@@ -184,7 +181,7 @@ export default function IletisimPage() {
             {/* Atölye linki */}
             <div style={{
               marginTop: "1rem",
-              padding: "1.5rem",
+              padding: "clamp(1rem, 3vw, 1.5rem)",
               border: "1px solid rgba(201,168,76,0.2)",
               backgroundColor: "rgba(201,168,76,0.04)",
             }}>
@@ -197,7 +194,7 @@ export default function IletisimPage() {
                 lineHeight: 1.6,
                 marginBottom: "1rem",
               }}>
-                Atölye derslerimize kayıt olmak için Atölye sayfasını ziyaret edin.
+                {t("atolyeLinki")}
               </p>
               <Link href="/atolye" style={{
                 fontFamily: "'DM Sans', sans-serif",
@@ -209,7 +206,7 @@ export default function IletisimPage() {
                 borderBottom: "1px solid rgba(201,168,76,0.4)",
                 paddingBottom: "2px",
               }}>
-                Atölye Programı →
+                {t("atolyeProgram")}
               </Link>
             </div>
           </div>
@@ -218,7 +215,7 @@ export default function IletisimPage() {
           <div style={{
             backgroundColor: "rgba(255,255,255,0.6)",
             border: "1px solid rgba(201,168,76,0.15)",
-            padding: "2.5rem",
+            padding: "clamp(1.5rem, 4vw, 2.5rem)",
           }}>
             {gonderildi ? (
               <div style={{ textAlign: "center", padding: "3rem 0" }}>
@@ -233,7 +230,7 @@ export default function IletisimPage() {
                   color: "#5C3A1E",
                   marginBottom: "0.75rem",
                 }}>
-                  Mesajınız alındı ✦
+                  {t("basariBaslik")}
                 </h2>
                 <p style={{
                   fontFamily: "'DM Sans', sans-serif",
@@ -241,7 +238,7 @@ export default function IletisimPage() {
                   color: "rgba(92,58,30,0.55)",
                   lineHeight: 1.7,
                 }}>
-                  Fatma Hanım 48 saat içinde sizinle iletişime geçecek.
+                  {t("basariAlt")}
                 </p>
               </div>
             ) : (
@@ -254,7 +251,7 @@ export default function IletisimPage() {
                   letterSpacing: "0.04em",
                   marginBottom: "0.5rem",
                 }}>
-                  Mesaj Gönderin
+                  {t("formBaslik")}
                 </h2>
 
                 {/* İsim */}
@@ -268,7 +265,7 @@ export default function IletisimPage() {
                     color: "rgba(92,58,30,0.5)",
                     marginBottom: "0.5rem",
                   }}>
-                    Adınız
+                    {t("adiniz")}
                   </label>
                   <input
                     type="text"
@@ -286,7 +283,6 @@ export default function IletisimPage() {
                       outline: "none",
                       boxSizing: "border-box",
                     }}
-                    placeholder="Fatma Hanım"
                   />
                 </div>
 
@@ -301,7 +297,7 @@ export default function IletisimPage() {
                     color: "rgba(92,58,30,0.5)",
                     marginBottom: "0.5rem",
                   }}>
-                    E-posta
+                    {t("epostaInput")}
                   </label>
                   <input
                     type="email"
@@ -319,7 +315,6 @@ export default function IletisimPage() {
                       outline: "none",
                       boxSizing: "border-box",
                     }}
-                    placeholder="ornek@eposta.com"
                   />
                 </div>
 
@@ -334,7 +329,7 @@ export default function IletisimPage() {
                     color: "rgba(92,58,30,0.5)",
                     marginBottom: "0.5rem",
                   }}>
-                    Mesajınız
+                    {t("mesajiniz")}
                   </label>
                   <textarea
                     required
@@ -353,7 +348,6 @@ export default function IletisimPage() {
                       resize: "vertical",
                       boxSizing: "border-box",
                     }}
-                    placeholder="Bir eser hakkında soru sormak istiyorum…"
                   />
                 </div>
 
@@ -372,7 +366,7 @@ export default function IletisimPage() {
                     transition: "background-color 0.3s",
                   }}
                 >
-                  Gönder
+                  {t("gonder")}
                 </button>
               </form>
             )}
@@ -384,6 +378,7 @@ export default function IletisimPage() {
         @media (max-width: 768px) {
           .iletisim-grid {
             grid-template-columns: 1fr !important;
+            gap: 2rem !important;
           }
         }
       `}</style>

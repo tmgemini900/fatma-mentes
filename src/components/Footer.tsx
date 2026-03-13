@@ -1,47 +1,20 @@
 "use client";
 
-/**
- * components/Footer.tsx
- * Fatma Menteş — Footer + PreFooter Bileşeni
- *
- * Özellikler:
- *   - PreFooter: kapanış cümlesi + tezhip ornament + parsömen→koyu geçiş
- *   - Footer grid 4 sütun: Logo · Nav · Atölye · Dil+İletişim
- *   - Dil seçici (TR/EN/IT/RU) — next-intl useRouter ile sayfa yönlendirmesi
- *   - Islak İmzalı Sertifika damgası
- *   - Sosyal medya (Instagram, Pinterest, Etsy)
- *   - Alt şerit: telif + manifesto
- *   - WCAG 2.2 AA — aria-label, role, aria-pressed, landmark
- *
- * Kurulum notu:
- *   next-intl kullanılıyorsa usePathname + useRouter import ediniz.
- *   Değilse dilSec fonksiyonu basit window.location.href ile çalışır.
- */
-
-import { useState } from "react";
-import Link from "next/link";
-
-/* ─── Navigasyon bağlantıları ─── */
-const NAV_LINKLERI = [
-  { href: "/eserler",        etiket: "Eserler"      },
-  { href: "/eller",          etiket: "Çıplak Eller" },
-  { href: "/atolye",         etiket: "Atölye"       },
-  { href: "/atolye#basvuru", etiket: "Başvuru"      },
-  { href: "/iletisim",       etiket: "İletişim"     },
-] as const;
+import { useLocale, useTranslations } from "next-intl";
+import { Link, useRouter, usePathname } from "@/i18n/navigation";
 
 /* ─── Yaklaşan atölyeler (Footer için özet) ─── */
 const FOOTER_ATOLYE = [
-  { href: "/atolye#takvim", gun: "15", ay: "Mar", isim: "Temel El Dikişi · Cüzdan",  detay: "4 kota boş · ₺1.800" },
-  { href: "/atolye#takvim", gun: "22", ay: "Mar", isim: "Osmanlı Tezhip · Levha",    detay: "1 kota boş · ₺4.200" },
+  { href: "/atolye#takvim", gun: "15", ay: "Mar", isim: "Temel El Dikişi · Cüzdan", detay: "4 kota boş · ₺1.800" },
+  { href: "/atolye#takvim", gun: "22", ay: "Mar", isim: "Osmanlı Tezhip · Levha", detay: "1 kota boş · ₺4.200" },
 ] as const;
 
 /* ─── Dil seçenekleri ─── */
 const DILLER = [
-  { kod: "tr", etiket: "TR", ad: "Türkçe · Aktif dil",     locale: "tr" },
-  { kod: "en", etiket: "EN", ad: "English · Active",        locale: "en" },
-  { kod: "it", etiket: "IT", ad: "Italiano · Attivo",       locale: "it" },
-  { kod: "ru", etiket: "RU", ad: "Русский · Активный",      locale: "ru" },
+  { kod: "tr" as const, etiket: "TR", ad: "Türkçe" },
+  { kod: "en" as const, etiket: "EN", ad: "English" },
+  { kod: "it" as const, etiket: "IT", ad: "Italiano" },
+  { kod: "ru" as const, etiket: "RU", ad: "Русский" },
 ] as const;
 
 /* ─── Grain texture ─── */
@@ -66,8 +39,19 @@ function OkIkonu() {
   );
 }
 
+/* ─── NAV LİNKLERİ ─── */
+const NAV_KEYS = [
+  { href: "/eserler",        labelKey: "eserler" },
+  { href: "/eller",          labelKey: "eller" },
+  { href: "/atolye",         labelKey: "atolye" },
+  { href: "/atolye#basvuru", labelKey: "basvuru" },
+  { href: "/iletisim",       labelKey: "iletisim" },
+] as const;
+
 /* ─── PRE-FOOTER ─── */
 export function PreFooter() {
+  const t = useTranslations("footer");
+
   return (
     <div
       aria-hidden="true"
@@ -75,7 +59,6 @@ export function PreFooter() {
       style={{ backgroundColor: "#F5ECD7" }}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 pt-12 md:pt-16 flex flex-col items-center gap-6">
-        {/* Kapanış cümlesi */}
         <p
           className="text-center max-w-[42rem]"
           style={{
@@ -88,20 +71,11 @@ export function PreFooter() {
             color: "rgba(92,58,30,0.35)",
           }}
         >
-          "Her dikiş,{" "}
-          <strong style={{ fontWeight: 400, fontStyle: "normal", color: "rgba(201,168,76,0.65)" }}>
-            zamana inat
-          </strong>{" "}
-          açılan bir penceredir.<br />
-          Her deri, bir ömrün{" "}
-          <strong style={{ fontWeight: 400, fontStyle: "normal", color: "rgba(201,168,76,0.65)" }}>
-            sessiz tanığı
-          </strong>."
+          {t("kapanis")}
         </p>
 
-        {/* Tezhip ornament */}
         <svg width="320" height="20" viewBox="0 0 320 20" fill="none">
-          <line x1="0"   y1="10" x2="126" y2="10" stroke="#C9A84C" strokeWidth="0.6" strokeOpacity="0.35"/>
+          <line x1="0" y1="10" x2="126" y2="10" stroke="#C9A84C" strokeWidth="0.6" strokeOpacity="0.35"/>
           <path d="M135 10 Q140 4 145 10 Q150 16 155 10 Q160 4 165 10 Q170 16 175 10 Q180 4 185 10"
                 stroke="#C9A84C" strokeWidth="0.7" fill="none" strokeOpacity="0.45"/>
           <circle cx="160" cy="10" r="3.5" stroke="#C9A84C" strokeWidth="0.8" strokeOpacity="0.6" fill="none"/>
@@ -110,7 +84,6 @@ export function PreFooter() {
         </svg>
       </div>
 
-      {/* Parsömen → Koyu geçiş */}
       <div
         className="w-full"
         style={{
@@ -125,16 +98,18 @@ export function PreFooter() {
 
 /* ─── FOOTER ─── */
 export function Footer() {
-  const [aktifDil, setAktifDil] = useState("tr");
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
+  const tSite = useTranslations("site");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  function dilSec(kod: string) {
-    setAktifDil(kod);
-    // next-intl ile yönlendirme:
-    // router.replace(pathname, { locale: kod });
-    // Veya basit: window.location.href = `/${kod}${pathname}`;
+  function dilSec(kod: "tr" | "en" | "it" | "ru") {
+    router.replace(pathname, { locale: kod });
   }
 
-  const aktifDilAdi = DILLER.find(d => d.kod === aktifDil)?.ad ?? "";
+  const aktifDilAdi = DILLER.find(d => d.kod === locale)?.ad ?? "";
 
   return (
     <>
@@ -156,7 +131,6 @@ export function Footer() {
         className="relative overflow-hidden"
         style={{ backgroundColor: "#1A0F0A", backgroundImage: GRAIN_DARK }}
       >
-        {/* Dekoratif arka plan radyal */}
         <div
           aria-hidden="true"
           className="absolute -top-32 -right-32 pointer-events-none rounded-full"
@@ -172,31 +146,29 @@ export function Footer() {
           {/* ══ Ana Grid ══ */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr] gap-10 lg:gap-16">
 
-            {/* ─── Kolon 1: Logo + Slogan + Sertifika ─── */}
+            {/* ─── Kolon 1: Logo + Slogan ─── */}
             <div className="flex flex-col gap-6">
-              <Link href="/" className="inline-flex flex-col" aria-label="Fatma Menteş — Ana sayfaya dön">
+              <Link href="/" className="inline-flex flex-col" aria-label={`${tSite("isim")} — Ana sayfaya dön`}>
                 <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.4rem", fontWeight: 300, letterSpacing: "0.12em", color: "#F5ECD7", lineHeight: 1, textDecoration: "none" }}>
-                  Fatma Menteş
+                  {tSite("isim")}
                 </span>
                 <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.55rem", fontWeight: 400, letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(201,168,76,0.55)", marginTop: "0.4rem" }}>
-                  Derinin Hafızası
+                  {tSite("slogan")}
                 </span>
               </Link>
 
               <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.9rem", fontWeight: 300, fontStyle: "italic", lineHeight: 1.65, color: "rgba(245,236,215,0.38)", maxWidth: "22rem" }}>
-                Makinelere inat, ellerin hafızasıyla işlenen sıfır atık eserler.
-                Her dikiş, bir vasiyet. Her deri, bir emanet.
+                {tSite("aciklama")}
               </p>
-
             </div>
 
             {/* ─── Kolon 2: Navigasyon ─── */}
             <nav aria-label="Alt navigasyon">
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(201,168,76,0.45)", marginBottom: "1.25rem", paddingBottom: "0.75rem", borderBottom: "1px solid rgba(201,168,76,0.1)" }}>
-                Sayfalar
+                {t("sayfalar")}
               </p>
               <ul className="flex flex-col gap-[0.6rem]" style={{ listStyle: "none" }}>
-                {NAV_LINKLERI.map(({ href, etiket }) => (
+                {NAV_KEYS.map(({ href, labelKey }) => (
                   <li key={href}>
                     <Link
                       href={href}
@@ -204,7 +176,7 @@ export function Footer() {
                       style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", fontWeight: 300, color: "rgba(245,236,215,0.55)", textDecoration: "none", letterSpacing: "0.03em", gap: "0.5rem" }}
                     >
                       <span style={{ fontSize: "0.6em", color: "rgba(201,168,76,0.3)", transition: "color 0.3s" }} aria-hidden="true">—</span>
-                      {etiket}
+                      {tNav(labelKey)}
                     </Link>
                   </li>
                 ))}
@@ -214,7 +186,7 @@ export function Footer() {
             {/* ─── Kolon 3: Atölyeler ─── */}
             <div>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(201,168,76,0.45)", marginBottom: "1.25rem", paddingBottom: "0.75rem", borderBottom: "1px solid rgba(201,168,76,0.1)" }}>
-                Yaklaşan Atölyeler
+                {t("yaklasanAtolyeler")}
               </p>
               <div className="flex flex-col">
                 {FOOTER_ATOLYE.map(({ href, gun, ay, isim, detay }) => (
@@ -242,7 +214,7 @@ export function Footer() {
                 <Link href="/atolye#takvim"
                       className="fm-takvim-link inline-flex items-center gap-2 mt-3 transition-colors duration-300"
                       style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.6rem", fontWeight: 400, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(201,168,76,0.4)", textDecoration: "none" }}>
-                  Tüm takvim <OkIkonu />
+                  {t("tumTakvim")} <OkIkonu />
                 </Link>
               </div>
             </div>
@@ -251,7 +223,7 @@ export function Footer() {
             <div>
               {/* Dil seçici */}
               <p id="footer-dil-label" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(201,168,76,0.45)", marginBottom: "1rem", paddingBottom: "0.75rem", borderBottom: "1px solid rgba(201,168,76,0.1)" }}>
-                Dil / Language
+                {t("dilSecici")}
               </p>
               <div role="group" aria-labelledby="footer-dil-label" className="flex flex-col gap-3">
                 <div className="flex gap-2 flex-wrap">
@@ -260,18 +232,18 @@ export function Footer() {
                       key={kod}
                       onClick={() => dilSec(kod)}
                       lang={kod}
-                      aria-pressed={aktifDil === kod}
+                      aria-pressed={locale === kod}
                       className="fm-dil-btn rounded-sm transition-all duration-300"
                       style={{
                         fontFamily: "'DM Sans', sans-serif",
                         fontSize: "0.62rem",
-                        fontWeight: aktifDil === kod ? 500 : 400,
+                        fontWeight: locale === kod ? 500 : 400,
                         letterSpacing: "0.16em",
                         textTransform: "uppercase",
                         padding: "0.35rem 0.75rem",
-                        background: aktifDil === kod ? "rgba(201,168,76,0.06)" : "transparent",
-                        border: `1px solid ${aktifDil === kod ? "rgba(201,168,76,0.4)" : "rgba(245,236,215,0.1)"}`,
-                        color: aktifDil === kod ? "#C9A84C" : "rgba(245,236,215,0.4)",
+                        background: locale === kod ? "rgba(201,168,76,0.06)" : "transparent",
+                        border: `1px solid ${locale === kod ? "rgba(201,168,76,0.4)" : "rgba(245,236,215,0.1)"}`,
+                        color: locale === kod ? "#C9A84C" : "rgba(245,236,215,0.4)",
                         cursor: "pointer",
                       }}
                     >
@@ -289,7 +261,7 @@ export function Footer() {
 
               {/* İletişim */}
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(201,168,76,0.45)", marginTop: "1.75rem", marginBottom: "1rem", paddingBottom: "0.75rem", borderBottom: "1px solid rgba(201,168,76,0.1)" }}>
-                İletişim
+                {t("iletisim")}
               </p>
               <div className="flex flex-col gap-3">
                 {[
@@ -305,7 +277,7 @@ export function Footer() {
                   },
                   {
                     href: undefined,
-                    metin: "Beyoğlu, İstanbul",
+                    metin: t("adres"),
                     ikon: (
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <path d="M7 1.5 Q10.5 1.5 10.5 5 Q10.5 8.5 7 12 Q3.5 8.5 3.5 5 Q3.5 1.5 7 1.5 Z" stroke="#C9A84C" strokeWidth="0.8"/>
@@ -359,7 +331,7 @@ export function Footer() {
                   },
                   {
                     href: "https://etsy.com/shop/fatmamentesart",
-                    label: "Etsy mağazası",
+                    label: "Etsy",
                     ikon: (
                       <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
                         <circle cx="12" cy="12" r="10" stroke="#C9A84C" strokeWidth="0.8" fill="none"/>
@@ -388,10 +360,10 @@ export function Footer() {
             style={{ borderTop: "1px solid rgba(201,168,76,0.1)" }}
           >
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.6rem", fontWeight: 300, letterSpacing: "0.1em", color: "rgba(245,236,215,0.2)" }}>
-              © 2026 Fatma Menteş · Tüm hakları saklıdır · Çıplak Eller Atölyesi, İstanbul
+              {tSite("telif")}
             </p>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.75rem", fontWeight: 300, fontStyle: "italic", color: "rgba(201,168,76,0.3)", letterSpacing: "0.06em" }}>
-              "Sıfır atık. Sıfır makine. Sonsuz sabır."
+              &quot;{tSite("manifesto")}&quot;
             </p>
           </div>
 

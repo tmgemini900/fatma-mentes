@@ -19,11 +19,38 @@
     "baslik2": "del Cuoio",
     "alinti": "Opere in pelle artigianali a zero sprechi, cucite a mano dalla memoria, in sfida alle macchine."
   },
+  "anasayfa": {
+    "seckilar": "Selezioni",
+    "oneCikan": "Opere in Evidenza",
+    "tumEserler": "Esplora Tutte le Opere",
+    "musait": "Disponibile",
+    "emanette": "Affidata",
+    "atolyeDavet": "In un piccolo laboratorio dove le mani arrivano dove le macchine non possono — c'è posto per voi.",
+    "atolyeProgram": "Vedi Programma Laboratorio"
+  },
+  "iletisimSayfa": {
+    "etiket": "04 · Contatto",
+    "baslik": "Contattaci",
+    "aciklama": "Scriveteci per chiedere di un'opera, prenotare un laboratorio o semplicemente parlare di artigianato del cuoio.",
+    "epostaLabel": "Email",
+    "atolyeLabel": "Laboratorio",
+    "atolyeLinki": "Visitate la pagina Laboratorio per iscrivervi ai nostri corsi.",
+    "atolyeProgram": "Programma Laboratorio →",
+    "formBaslik": "Invia un Messaggio",
+    "adiniz": "Il Vostro Nome",
+    "epostaInput": "Email",
+    "mesajiniz": "Il Vostro Messaggio",
+    "gonder": "Invia",
+    "basariBaslik": "Messaggio ricevuto ✦",
+    "basariAlt": "Fatma vi contatterà entro 48 ore."
+  },
   "eserler": {
     "baslik": "Opere",
+    "altBaslik": "Fatto a mano · Zero sprechi · Certificato con firma originale",
     "filtre": "Filtra",
     "musait": "Disponibile",
     "dolu": "Affidata",
+    "emanette": "Affidata",
     "hepsi": "Tutte"
   },
   "eserDetay": {

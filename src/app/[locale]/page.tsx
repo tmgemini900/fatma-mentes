@@ -1,6 +1,7 @@
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import HeroSection from "@/components/HeroSection";
 import SplashScreen from "@/components/SplashScreen";
-import Link from "next/link";
 import type { Eser } from "@/types/eser";
 import eserlerData from "@/data/eserler.json";
 
@@ -18,27 +19,29 @@ function OrnamentCizgi() {
 }
 
 export default function AnaSayfa() {
+  const t = useTranslations("anasayfa");
+
   return (
     <>
       <SplashScreen />
       <HeroSection />
 
       {/* ══ VİTRİN ESERLER ══ */}
-      <section style={{ backgroundColor: "#F5ECD7", padding: "6rem 2rem" }} aria-labelledby="vitrin-baslik">
+      <section style={{ backgroundColor: "#F5ECD7", padding: "6rem clamp(1rem, 4vw, 2rem)" }} aria-labelledby="vitrin-baslik">
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.6rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "rgba(92,58,30,0.45)", marginBottom: "0.75rem" }}>
-              Seçkiler
+              {t("seckilar")}
             </p>
             <h2 id="vitrin-baslik" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 300, letterSpacing: "0.05em", color: "#5C3A1E", marginBottom: "1rem" }}>
-              Öne Çıkan Eserler
+              {t("oneCikan")}
             </h2>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <OrnamentCizgi />
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "1.5rem", marginBottom: "3rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(240px, 100%), 1fr))", gap: "1.5rem", marginBottom: "3rem" }}>
             {vitrinEserler.map((eser) => (
               <Link key={eser.slug} href={`/eserler/${eser.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                 <article style={{ border: "1px solid rgba(201,168,76,0.18)", backgroundColor: "rgba(255,255,255,0.55)", overflow: "hidden", cursor: "pointer" }}>
@@ -61,7 +64,7 @@ export default function AnaSayfa() {
                         {eser.fiyat.toLocaleString("tr-TR")} ₺
                       </span>
                       <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.55rem", letterSpacing: "0.14em", textTransform: "uppercase", color: eser.musait ? "rgba(92,58,30,0.4)" : "rgba(180,60,60,0.6)" }}>
-                        {eser.musait ? "Müsait" : "Emanette"}
+                        {eser.musait ? t("musait") : t("emanette")}
                       </span>
                     </div>
                   </div>
@@ -72,7 +75,7 @@ export default function AnaSayfa() {
 
           <div style={{ textAlign: "center" }}>
             <Link href="/eserler" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#5C3A1E", textDecoration: "none", borderBottom: "1px solid rgba(92,58,30,0.3)", paddingBottom: "3px" }}>
-              Tüm Eserleri Keşfet
+              {t("tumEserler")}
               <svg width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><path d="M1 4h12M9 1l4 3-4 3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </Link>
           </div>
@@ -80,12 +83,10 @@ export default function AnaSayfa() {
       </section>
 
       {/* ══ ATÖLYE TANITIM ══ */}
-      <section style={{ backgroundColor: "#1A0F0A", padding: "6rem 2rem", textAlign: "center" }}>
+      <section style={{ backgroundColor: "#1A0F0A", padding: "6rem clamp(1rem, 4vw, 2rem)", textAlign: "center" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto" }}>
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.2rem, 3vw, 1.9rem)", fontWeight: 300, fontStyle: "italic", color: "rgba(245,236,215,0.55)", lineHeight: 1.65, letterSpacing: "0.04em", marginBottom: "2.5rem" }}>
-            "Makinelerin giremediği yere{" "}
-            <strong style={{ fontWeight: 400, fontStyle: "normal", color: "rgba(201,168,76,0.75)" }}>ellerin girdiği</strong>
-            {" "}küçük bir atölyede — size yer var."
+            &quot;{t("atolyeDavet")}&quot;
           </p>
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "2.5rem" }}>
             <svg width="200" height="14" viewBox="0 0 200 14" fill="none" aria-hidden="true">
@@ -96,7 +97,7 @@ export default function AnaSayfa() {
             </svg>
           </div>
           <Link href="/atolye" style={{ display: "inline-block", padding: "0.9rem 2.5rem", border: "1px solid rgba(201,168,76,0.4)", fontFamily: "'DM Sans', sans-serif", fontSize: "0.65rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "#C9A84C", textDecoration: "none" }}>
-            Atölye Programını Gör
+            {t("atolyeProgram")}
           </Link>
         </div>
       </section>

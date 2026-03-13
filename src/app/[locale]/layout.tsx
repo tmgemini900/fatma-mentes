@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import FooterBolumu from "@/components/Footer";
+import "../globals.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
@@ -21,7 +22,8 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const LOCALE_LISTESI = ["tr", "en", "it", "ru"];
+const LOCALE_LISTESI = ["tr", "en", "it", "ru"] as const;
+type Locale = (typeof LOCALE_LISTESI)[number];
 
 export const metadata: Metadata = {
   title: "Fatma Menteş Art",
@@ -37,7 +39,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!LOCALE_LISTESI.includes(locale)) {
+  if (!(LOCALE_LISTESI as readonly string[]).includes(locale)) {
     notFound();
   }
 
@@ -45,15 +47,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body style={{
-        fontFamily: "var(--font-dm-sans), sans-serif",
-        backgroundColor: "#F5ECD7",
-        color: "#5C3A1E",
-        overflowX: "hidden",
-      }}>
+      <body style={{ margin: 0, backgroundColor: "#F5ECD7" }}>
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main id="main-content">{children}</main>
+          {children}
           <FooterBolumu />
         </NextIntlClientProvider>
       </body>

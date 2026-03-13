@@ -176,14 +176,15 @@ export default function CiplaakEllerPage() {
         {/* Dekoratif arka plan harfi */}
         <div
           aria-hidden="true"
-          className="absolute top-0 right-0 leading-none pointer-events-none select-none"
+          className="absolute top-0 right-0 leading-none pointer-events-none select-none overflow-hidden"
           style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(18rem, 40vw, 32rem)",
+            fontSize: "clamp(12rem, 30vw, 32rem)",
             fontWeight: 300,
             fontStyle: "italic",
             color: "rgba(139,69,19,0.045)",
             lineHeight: 0.9,
+            maxWidth: "50vw",
           }}
         >
           Ç
@@ -377,17 +378,18 @@ export default function CiplaakEllerPage() {
         {/* Büyük tırnak */}
         <div
           aria-hidden="true"
-          className="absolute top-4 left-4 md:left-10 pointer-events-none select-none"
+          className="absolute top-4 left-4 md:left-10 pointer-events-none select-none overflow-hidden"
           style={{
             fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(12rem, 30vw, 22rem)",
+            fontSize: "clamp(8rem, 20vw, 22rem)",
             fontWeight: 300,
             color: "rgba(201,168,76,0.07)",
             lineHeight: 0.8,
             fontStyle: "italic",
+            maxWidth: "40vw",
           }}
         >
-          "
+          &ldquo;
         </div>
 
         <div className="relative z-10 max-w-[900px] mx-auto text-center">

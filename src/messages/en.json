@@ -19,11 +19,38 @@
     "baslik2": "of Leather",
     "alinti": "Zero-waste leather goods hand-stitched from memory, in defiance of machines."
   },
+  "anasayfa": {
+    "seckilar": "Selections",
+    "oneCikan": "Featured Works",
+    "tumEserler": "Explore All Works",
+    "musait": "Available",
+    "emanette": "Entrusted",
+    "atolyeDavet": "In a small workshop where hands reach where machines cannot — there is a place for you.",
+    "atolyeProgram": "View Workshop Schedule"
+  },
+  "iletisimSayfa": {
+    "etiket": "04 · Contact",
+    "baslik": "Get in Touch",
+    "aciklama": "Write to us to ask about a piece, book a workshop, or simply chat about leathercraft.",
+    "epostaLabel": "Email",
+    "atolyeLabel": "Workshop",
+    "atolyeLinki": "Visit the Workshop page to register for our classes.",
+    "atolyeProgram": "Workshop Schedule →",
+    "formBaslik": "Send a Message",
+    "adiniz": "Your Name",
+    "epostaInput": "Email",
+    "mesajiniz": "Your Message",
+    "gonder": "Send",
+    "basariBaslik": "Message received ✦",
+    "basariAlt": "Fatma will be in touch within 48 hours."
+  },
   "eserler": {
     "baslik": "Works",
+    "altBaslik": "Handmade · Zero waste · Wet-signed certificate",
     "filtre": "Filter",
     "musait": "Available",
     "dolu": "Entrusted",
+    "emanette": "Entrusted",
     "hepsi": "All"
   },
   "eserDetay": {

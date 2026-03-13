@@ -1,9 +1,5 @@
-/**
- * app/[locale]/eserler/page.tsx
- * Fatma Menteş — Eserler Listesi Sayfası
- */
-
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import type { Eser } from "@/types/eser";
 import eserlerData from "@/data/eserler.json";
@@ -17,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function EserlerPage() {
+  const t = useTranslations("eserler");
+
   return (
     <main
       style={{
@@ -26,7 +24,7 @@ export default function EserlerPage() {
         paddingBottom: "4rem",
       }}
     >
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 2rem" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(1rem, 4vw, 2rem)" }}>
         {/* Başlık */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <h1
@@ -39,7 +37,7 @@ export default function EserlerPage() {
               marginBottom: "0.75rem",
             }}
           >
-            Eserler
+            {t("baslik")}
           </h1>
           <p
             style={{
@@ -50,7 +48,7 @@ export default function EserlerPage() {
               color: "rgba(92,58,30,0.45)",
             }}
           >
-            El yapımı · Sıfır atık · Islak imzalı sertifika
+            {t("altBaslik")}
           </p>
           <svg
             style={{ margin: "1.5rem auto 0", display: "block" }}
@@ -71,7 +69,7 @@ export default function EserlerPage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(280px, 100%), 1fr))",
             gap: "2rem",
           }}
         >
@@ -156,7 +154,7 @@ export default function EserlerPage() {
                         padding: "0.25rem 0.6rem",
                       }}
                     >
-                      {eser.musait ? "Müsait" : "Emanette"}
+                      {eser.musait ? t("musait") : t("emanette")}
                     </span>
                   </div>
                 </div>

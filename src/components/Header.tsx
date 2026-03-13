@@ -1,53 +1,29 @@
 "use client";
 
-/**
- * Header — Fatma Menteş | Derinin Hafızası
- *
- * Özellikler:
- *   - Sayfa başı: şeffaf, hero üzerinde yüzer
- *   - Scroll > 40px: backdrop-blur + parşömen cam efekti
- *   - Masaüstü (≥768px): nav linkleri + dil seçici görünür
- *   - Mobil: hamburger → clip-path animasyonlu overlay menü
- *   - Zanaat Çantası: custom deri çanta SVG ikonu + ürün adedi rozeti
- *   - Erişilebilirlik: focus trap, Escape, Tab yönetimi, ARIA
- *
- * Kullanım (layout.tsx):
- *   import Header from "@/components/layout/Header";
- *   <Header cartCount={cartItems.length} locale={locale} />
- *
- * Bağımlılıklar: Yalnızca React hooks — harici kütüphane yok
- */
-
 import { useEffect, useRef, useState, useCallback } from "react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, useRouter, usePathname } from "@/i18n/navigation";
 
 /* ─── Tipler ─── */
 interface NavItem {
-  href:    string;
-  label:   string;
-  labelEn: string;
-  num:     string;
-}
-
-interface Props {
-  cartCount?: number;
-  locale?:    "tr" | "en" | "it" | "ru";
-  onLocaleChange?: (locale: string) => void;
+  href: string;
+  labelKey: string;
+  num: string;
 }
 
 /* ─── Sabitler ─── */
 const NAV_ITEMS: NavItem[] = [
-  { href: "/eserler",  label: "Eserler",      labelEn: "Works",    num: "01" },
-  { href: "/eller",    label: "Çıplak Eller", labelEn: "About",    num: "02" },
-  { href: "/atolye",   label: "Atölye",       labelEn: "Workshop", num: "03" },
-  { href: "/iletisim", label: "İletişim",     labelEn: "Contact",  num: "04" },
+  { href: "/eserler",  labelKey: "eserler",  num: "01" },
+  { href: "/eller",    labelKey: "eller",    num: "02" },
+  { href: "/atolye",   labelKey: "atolye",   num: "03" },
+  { href: "/iletisim", labelKey: "iletisim", num: "04" },
 ];
 
 const LOCALES = [
-  { code: "tr", label: "TR", lang: "tr", ariaLabel: "Türkçe"   },
-  { code: "en", label: "EN", lang: "en", ariaLabel: "English"  },
-  { code: "it", label: "IT", lang: "it", ariaLabel: "Italiano" },
-  { code: "ru", label: "RU", lang: "ru", ariaLabel: "Русский"  },
+  { code: "tr" as const, label: "TR", lang: "tr", ariaLabel: "Türkçe" },
+  { code: "en" as const, label: "EN", lang: "en", ariaLabel: "English" },
+  { code: "it" as const, label: "IT", lang: "it", ariaLabel: "Italiano" },
+  { code: "ru" as const, label: "RU", lang: "ru", ariaLabel: "Русский" },
 ];
 
 /* ─── Zanaat Çantası SVG ─── */
@@ -63,13 +39,9 @@ function BagIcon() {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      {/* Çanta gövdesi */}
       <path d="M3 8 L3.8 18 Q3.9 19.2 5 19.2 L17 19.2 Q18.1 19.2 18.2 18 L19 8 Z"/>
-      {/* Kulp */}
       <path d="M7.5 8 Q7.5 4.5 11 4.5 Q14.5 4.5 14.5 8"/>
-      {/* Kapak çizgisi */}
       <path d="M3.2 10 L18.8 10"/>
-      {/* Toka */}
       <rect x="9.5" y="9.2" width="3" height="1.6" rx="0.4"/>
     </svg>
   );
@@ -97,15 +69,20 @@ function MenuCornerDeco() {
 /* ─── Ana Bileşen ─── */
 export default function Header({
   cartCount = 0,
-  locale    = "tr",
-  onLocaleChange,
-}: Props) {
-  const [scrolled,    setScrolled]    = useState(false);
-  const [menuOpen,    setMenuOpen]    = useState(false);
-  const [activeLang,  setActiveLang]  = useState(locale);
+}: {
+  cartCount?: number;
+}) {
+  const t = useTranslations("nav");
+  const tSite = useTranslations("site");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const menuRef     = useRef<HTMLElement>(null);
-  const menuBtnRef  = useRef<HTMLButtonElement>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const menuRef = useRef<HTMLElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
   const prevFocusRef = useRef<HTMLElement | null>(null);
 
   /* ── Scroll gözlemcisi ── */
@@ -151,7 +128,7 @@ export default function Header({
       'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
     );
     const first = focusable[0];
-    const last  = focusable[focusable.length - 1];
+    const last = focusable[focusable.length - 1];
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault(); last?.focus();
     } else if (!e.shiftKey && document.activeElement === last) {
@@ -159,10 +136,9 @@ export default function Header({
     }
   }, []);
 
-  /* Dil değişimi */
-  const handleLangChange = (code: string) => {
-    setActiveLang(code as typeof activeLang);
-    onLocaleChange?.(code);
+  /* Dil değişimi — gerçek navigasyon */
+  const handleLangChange = (code: "tr" | "en" | "it" | "ru") => {
+    router.replace(pathname, { locale: code });
   };
 
   /* Stil sabitleri */
@@ -195,26 +171,28 @@ export default function Header({
     `,
   } as const;
 
-  const isScrolledText   = scrolled ? "text-[#5C3A1E] hover:text-[#8B4513]" : "text-[rgba(245,236,215,0.82)] hover:text-[#C9A84C]";
-  const isScrolledIcon   = scrolled ? "text-[#5C3A1E] hover:text-[#8B4513] hover:bg-[rgba(92,58,30,0.08)]" : "text-[rgba(245,236,215,0.85)] hover:text-[#C9A84C] hover:bg-[rgba(201,168,76,0.1)]";
-  const isScrolledLang   = scrolled ? "text-[rgba(92,58,30,0.45)]" : "text-[rgba(245,236,215,0.55)]";
-  const isScrolledLangAct= scrolled ? "text-[#8B4513]"             : "text-[#C9A84C]";
+  const isScrolledText = scrolled ? "text-[#5C3A1E] hover:text-[#8B4513]" : "text-[rgba(245,236,215,0.82)] hover:text-[#C9A84C]";
+  const isScrolledIcon = scrolled ? "text-[#5C3A1E] hover:text-[#8B4513] hover:bg-[rgba(92,58,30,0.08)]" : "text-[rgba(245,236,215,0.85)] hover:text-[#C9A84C] hover:bg-[rgba(201,168,76,0.1)]";
+  const isScrolledLang = scrolled ? "text-[rgba(92,58,30,0.45)]" : "text-[rgba(245,236,215,0.55)]";
+  const isScrolledLangAct = scrolled ? "text-[#8B4513]" : "text-[#C9A84C]";
+
+  /* Nav label'ları İngilizce karşılıkları (mobil menü için) */
+  const labelEnMap: Record<string, string> = {
+    eserler: "Works",
+    eller: "About",
+    atolye: "Workshop",
+    iletisim: "Contact",
+  };
 
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap');
-
-        /* ── Hamburger X animasyonu ── */
         .ham-open .ham-1 { transform: translateY(6px) rotate(45deg);  width: 20px; }
         .ham-open .ham-2 { opacity: 0; transform: scaleX(0); }
         .ham-open .ham-3 { transform: translateY(-6px) rotate(-45deg); width: 20px; }
-
-        /* ── Mobil menü clip-path animasyonu ── */
         .menu-closed { clip-path: inset(0 0 100% 0); }
         .menu-opened { clip-path: inset(0 0 0% 0); }
-
-        /* ── Menü link reveal ── */
         .menu-link-item {
           opacity: 0;
           transform: translateY(16px);
@@ -226,15 +204,11 @@ export default function Header({
         .menu-opened .menu-link-item:nth-child(3) { transition-delay: 0.34s, 0.34s, 0s, 0s; }
         .menu-opened .menu-link-item:nth-child(4) { transition-delay: 0.42s, 0.42s, 0s, 0s; }
         .menu-link-item:hover, .menu-link-item:focus-visible { padding-left: 0.5rem; color: #C9A84C; outline: none; }
-
-        /* ── Menü footer reveal ── */
         .menu-footer-inner {
           opacity: 0; transform: translateY(12px);
           transition: opacity 0.5s 0.52s ease, transform 0.5s 0.52s ease;
         }
         .menu-opened .menu-footer-inner { opacity: 1; transform: translateY(0); }
-
-        /* ── Menü grain ── */
         .menu-grain::before {
           content: '';
           position: absolute; inset: 0;
@@ -261,7 +235,7 @@ export default function Header({
         <Link
           href="/"
           className="flex flex-col gap-[2px] no-underline flex-shrink-0"
-          aria-label="Fatma Menteş — Ana Sayfa"
+          aria-label={`${tSite("isim")} — Ana Sayfa`}
         >
           <span
             className="uppercase leading-none transition-colors duration-350"
@@ -273,7 +247,7 @@ export default function Header({
               color: scrolled ? "#5C3A1E" : "#F5ECD7",
             }}
           >
-            Fatma Menteş
+            {tSite("isim")}
           </span>
           <span
             aria-hidden="true"
@@ -288,7 +262,7 @@ export default function Header({
               transition: "opacity 0.35s",
             }}
           >
-            Derinin Hafızası
+            {tSite("slogan")}
           </span>
         </Link>
 
@@ -301,7 +275,7 @@ export default function Header({
               className={`${S.navLink} ${isScrolledText}`}
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           ))}
         </nav>
@@ -326,14 +300,14 @@ export default function Header({
                 )}
                 <button
                   lang={loc.lang}
-                  aria-pressed={activeLang === loc.code}
+                  aria-pressed={locale === loc.code}
                   aria-label={loc.ariaLabel}
                   onClick={() => handleLangChange(loc.code)}
                   className={`
                     text-[0.6rem] font-medium tracking-[0.12em] uppercase
                     bg-transparent border-none cursor-pointer px-1 py-1 rounded-sm
                     transition-colors duration-250
-                    ${activeLang === loc.code ? isScrolledLangAct : isScrolledLang}
+                    ${locale === loc.code ? isScrolledLangAct : isScrolledLang}
                     hover:text-[#C9A84C]
                   `}
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -377,18 +351,9 @@ export default function Header({
               aria-hidden="true"
               className={`flex flex-col justify-center gap-[5px] w-[22px] h-[16px] ${menuOpen ? "ham-open" : ""}`}
             >
-              <span
-                className="ham-1 block h-px bg-current origin-center"
-                style={{ width: "22px", transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1), width 0.4s ease" }}
-              />
-              <span
-                className="ham-2 block h-px bg-current origin-center"
-                style={{ width: "14px", transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease" }}
-              />
-              <span
-                className="ham-3 block h-px bg-current origin-center"
-                style={{ width: "18px", transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1), width 0.4s ease" }}
-              />
+              <span className="ham-1 block h-px bg-current origin-center" style={{ width: "22px", transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1), width 0.4s ease" }} />
+              <span className="ham-2 block h-px bg-current origin-center" style={{ width: "14px", transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease" }} />
+              <span className="ham-3 block h-px bg-current origin-center" style={{ width: "18px", transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1), width 0.4s ease" }} />
             </span>
           </button>
         </div>
@@ -438,14 +403,14 @@ export default function Header({
                       letterSpacing: "0.04em",
                     }}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </span>
                   <span
                     aria-hidden="true"
                     className="ml-auto text-[0.62rem] tracking-[0.18em] uppercase"
                     style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, color: "rgba(201,168,76,0.35)" }}
                   >
-                    {item.labelEn}
+                    {labelEnMap[item.labelKey]}
                   </span>
                 </Link>
               </li>
@@ -461,14 +426,14 @@ export default function Header({
                 <button
                   key={loc.code}
                   lang={loc.lang}
-                  aria-pressed={activeLang === loc.code}
-                  onClick={() => handleLangChange(loc.code)}
+                  aria-pressed={locale === loc.code}
+                  onClick={() => { handleLangChange(loc.code); closeMenu(); }}
                   className={`
                     text-[0.65rem] tracking-[0.14em] uppercase
                     bg-transparent cursor-pointer
                     px-3 py-[6px] rounded-sm
                     border transition-all duration-250
-                    ${activeLang === loc.code
+                    ${locale === loc.code
                       ? "text-[#C9A84C] border-[rgba(201,168,76,0.35)]"
                       : "text-[rgba(245,236,215,0.4)] border-transparent hover:text-[#C9A84C] hover:border-[rgba(201,168,76,0.35)]"
                     }

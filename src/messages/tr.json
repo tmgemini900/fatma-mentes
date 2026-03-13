@@ -19,11 +19,38 @@
     "baslik2": "Hafızası",
     "alinti": "Makinelere inat, ellerin hafızasıyla işlenen sıfır atık eserler."
   },
+  "anasayfa": {
+    "seckilar": "Seçkiler",
+    "oneCikan": "Öne Çıkan Eserler",
+    "tumEserler": "Tüm Eserleri Keşfet",
+    "musait": "Müsait",
+    "emanette": "Emanette",
+    "atolyeDavet": "Makinelerin giremediği yere ellerin girdiği küçük bir atölyede — size yer var.",
+    "atolyeProgram": "Atölye Programını Gör"
+  },
+  "iletisimSayfa": {
+    "etiket": "04 · İletişim",
+    "baslik": "Bize Ulaşın",
+    "aciklama": "Bir eser hakkında soru sormak, atölye rezervasyonu veya sadece el sanatı üzerine sohbet için yazın.",
+    "epostaLabel": "E-posta",
+    "atolyeLabel": "Atölye",
+    "atolyeLinki": "Atölye derslerimize kayıt olmak için Atölye sayfasını ziyaret edin.",
+    "atolyeProgram": "Atölye Programı →",
+    "formBaslik": "Mesaj Gönderin",
+    "adiniz": "Adınız",
+    "epostaInput": "E-posta",
+    "mesajiniz": "Mesajınız",
+    "gonder": "Gönder",
+    "basariBaslik": "Mesajınız alındı ✦",
+    "basariAlt": "Fatma Hanım 48 saat içinde sizinle iletişime geçecek."
+  },
   "eserler": {
     "baslik": "Eserler",
+    "altBaslik": "El yapımı · Sıfır atık · Islak imzalı sertifika",
     "filtre": "Filtrele",
     "musait": "Müsait",
     "dolu": "Emanet Buldu",
+    "emanette": "Emanette",
     "hepsi": "Tümü"
   },
   "eserDetay": {
